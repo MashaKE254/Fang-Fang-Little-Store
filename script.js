@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const menuCard = button.closest('.menu-card');
             const name = menuCard.querySelector('h3').textContent;
-            const price = 9.99; // You may want to add actual prices to your menu items
+            const price = 9.99;
             const image = menuCard.querySelector('img').src;
 
             const existingItem = cart.find(item => item.name === name);
@@ -107,19 +107,3 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCart();
         });
     });
-
-    // Back to Top Button
-    const backToTopButton = document.getElementById('back-to-top');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
